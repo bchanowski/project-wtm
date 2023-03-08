@@ -1,0 +1,10 @@
+.shifts_controller-container {
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+  overflow-x: auto;
+  min-width: 500px;
+  /* max-width: 1300px; */
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+}

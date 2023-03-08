@@ -1,34 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Navigate, Route, Routes } from "react-router-dom";
+import Navigation from "./common/NavApp/Navigation";
+import UserListController from "./pages/UserListController";
+import UserFormController from "./pages/UserFormController";
+import ShiftsController from "./pages/ShiftsController";
+import UserAccountView from "./pages/UserAccountView";
+import LoginController from "./pages/LoginController";
+
+import { Fragment, useContext } from "react";
+
+import AppContext from "./shared/context/app-context";
+import { UserProvider } from "./components/usersController/context/UserFilterContext";
+import HomeofficeController from "./pages/HomeofficeController";
+import WorkTimeController from "./pages/WorkTimeController";
+import ManageTeamPanel from "./components/teamsController/ManageTeamPanel";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { token, role } = useContext(AppContext);
+
+  const adminIsLogged = !!token && role === "ADMIN";
+  const userIsLogged = !!token && role === "USER";
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <Fragment>
+      <UserProvider>
+        <Navigation />
+        <Routes>
+          {adminIsLogged && (
+            <Fragment>
+              <Route path="/shifts" element={<ShiftsController />} />
+              <Route path="/users" element={<UserListController />} />
+              <Route path="/homeoffice" element={<HomeofficeController />} />
+              <Route path="/teams" element={<ManageTeamPanel />} />
+              <Route path="/user/:id/*" element={<UserAccountView />} />
+              <Route path="/czaspracy" element={<WorkTimeController />} />
+            </Fragment>
+          )}
+          {(adminIsLogged || userIsLogged) && (
+            <Route path="/userform" element={<UserFormController />} />
+          )}
+          {userIsLogged && (
+            <Route path="/user_account" element={<UserAccountView />} />
+          )}
+          <Route path="/login" element={<LoginController />} />
+          <Route path="*" element={<Navigate replace to="/login" />} />
+        </Routes>
+      </UserProvider>
+    </Fragment>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,37 @@
+const dataTable = [
+  {
+    id: "1",
+    team_name: "dev_ops",
+    members: "3",
+    created_at: "2022-07-22",
+    updated_at: "2022-07-22",
+  },
+  {
+    id: "2",
+    team_name: "front_end",
+    members: "11",
+    created_at: "2022-07-22",
+    updated_at: "2022-07-23",
+  },
+  {
+    id: "3",
+    team_name: "back_end",
+    members: "7",
+    created_at: "2022-07-22",
+    updated_at: "2022-07-23",
+  },
+  {
+    id: "4",
+    team_name: "QA",
+    members: "4",
+    created_at: "2022-07-22",
+    updated_at: "2022-08-23",
+  },
+  {
+    id: "5",
+    team_name: "ADM",
+    members: "2",
+    created_at: "2022-07-22",
+    updated_at: "2022-08-23",
+  },
+];

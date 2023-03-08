@@ -1,0 +1,74 @@
+.homeoffice-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+  transition: all 0.5s ease;
+}
+
+.homeoffice-container-data {
+  width: 80vw;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+  border: 1px solid rgb(134, 134, 134);
+  border-radius: 2%;
+}
+
+.dates-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.date-list {
+  margin: 10px;
+}
+
+.select-user-ho {
+  margin: 5px;
+  border: 1px solid rgb(180, 180, 180);
+  color: rgb(27, 27, 27);
+  border-radius: 0.25em;
+  padding: 0.5em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+.list-dates-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.btn-add-ho {
+  margin: 3px 5px;
+}
+
+.btn-del-ho {
+  margin: 3px 5px;
+}
+
+.input-date {
+  margin: 5px 5px;
+  border: 1px solid rgb(134, 134, 134);
+  border-radius: 5%;
+}
+
+.h2-text {
+  text-align: center;
+  padding: 0px;
+}
+
+@media screen and (max-width: 360px) {
+  .btn-add-ho {
+    margin-top: 0px;
+  }
+}

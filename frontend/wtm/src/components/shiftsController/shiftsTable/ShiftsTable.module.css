@@ -1,0 +1,135 @@
+.manageShift-btn {
+  background: none;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  text-transform: uppercase;
+}
+
+.editShift-btn {
+  background-color: rgb(223, 185, 114);
+  margin-right: 5px;
+}
+
+.deleteShift-btn {
+  background-color: rgb(242, 112, 112);
+}
+
+.addShift-tableBtn {
+  background-color: rgb(12, 156, 189);
+  color: white;
+  border: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  margin: 0px 2px;
+}
+
+.shifts-container {
+  min-height: 25rem;
+  padding: 1rem 0rem;
+}
+
+.table-wrapper {
+  height: 17rem;
+}
+
+.pagination-btn {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  transition: 200ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.pagination-wrapper {
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 1.4rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  height: 3.5rem;
+}
+
+.addBtn-wrapper {
+  margin-top: 3vw;
+}
+
+.pagination-element {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-element-content {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 200ms ease-in-out;
+}
+
+.pagination-element-content:hover {
+  background-color: black;
+  color: white;
+}
+
+.pagination-goTo-input {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-goTo-input input {
+  width: 30px;
+  border: none;
+  border-bottom: 2px solid rgb(156, 156, 156);
+  background-color: rgb(243, 243, 243);
+  transition: 200ms ease-in-out;
+  padding: 0;
+  font-size: 1.4rem;
+  padding-left: 0.2rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.pagination-goTo-input input::-webkit-outer-spin-button,
+.pagination-goTo-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.pagination-goTo-input input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.pagination-goTo-input input:focus {
+  outline: none;
+  border-bottom: 2px solid rgb(71, 71, 71);
+}
+
+@media all and (min-width: 1399px) {
+  .addBtn-wrapper {
+    margin-top: 0;
+  }
+
+  .pagination-wrapper {
+    max-width: 25rem;
+  }
+}

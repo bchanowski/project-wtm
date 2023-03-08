@@ -1,0 +1,30 @@
+.addShiftform-label {
+  font-size: clamp(1.3rem, calc((2vw + 1px) / 2), 3rem);
+}
+
+.addShiftform-input {
+  font-size: clamp(1rem, calc((2vw + 1px) / 5), 3rem);
+}
+
+.addShiftform-message {
+  font-size: 1rem;
+}
+
+.addShiftForm-submitBtn {
+  font-size: clamp(1.2rem, calc((2vw + 1px) / 7), 3rem);
+}
+
+.filterRemoteDays-form {
+  height: 3.5vw;
+}
+
+.no-results-remoteDays-filter {
+  height: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-results-remoteDays-filter p {
+  transform: translateY(-0.5vw);
+}

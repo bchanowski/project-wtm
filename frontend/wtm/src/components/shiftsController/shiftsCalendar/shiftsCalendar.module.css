@@ -1,0 +1,331 @@
+.calendar-container {
+  border: 1px solid black;
+  position: relative;
+  min-height: 50rem;
+}
+
+.error-msg-container {
+  position: absolute;
+  top: 50%;
+  right: 40%;
+  transform: translate(50%, 50%);
+}
+
+.calendarRight-container {
+  height: auto;
+  padding: 1rem;
+}
+
+.calendarRight-topBar {
+  width: 100%;
+  padding: 2vw 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topBar-currentDate {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  margin: 0 2vw;
+  background: none;
+  border: none;
+  width: 30rem;
+}
+
+.topBar-btn {
+  border: none;
+  padding: 0.1rem 0.3rem;
+  background-color: rgb(2, 126, 139);
+  color: white;
+  font-weight: 500;
+  font-size: 1.9rem;
+}
+
+.main-calendar-container {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.weekdays-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.weekdays-container:last-child {
+  border-right: 1px solid rgb(14, 145, 168);
+}
+
+.weekday-abbr {
+  padding: max(1.5vw, 0.75rem);
+  font-size: clamp(1rem, 2vw + 1px, 2rem);
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid rgb(14, 145, 168);
+  border-right: none;
+  color: rgb(0, 0, 0);
+  cursor: default;
+  transition: background-color 200ms ease-in-out;
+}
+
+.weekday-abbr:hover {
+  background-color: rgb(14, 145, 168);
+  color: white;
+}
+
+.monthDays-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.month_day {
+  font-size: clamp(1.4rem, 2vw + 1px, 2rem);
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 1vw 0;
+}
+
+.month_day-value {
+  border-radius: 50%;
+  width: max(5vw, 2.5rem);
+  max-width: 5rem;
+  max-height: 5rem;
+  height: max(5vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.month_day-value.day-withoutShift:hover {
+  background-color: rgb(211, 232, 227);
+}
+
+.day-withShift {
+  background-color: #36bdce;
+  color: white;
+}
+
+.calendarLeft-container {
+  width: 100%;
+  padding-top: 5rem;
+}
+
+.calendarLeft-header-container {
+  width: 100%;
+  padding: 2vw 2vw;
+  border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+.calendarLeft-header-container h4 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  color: rgb(224, 224, 224);
+}
+
+.manageShift-container {
+  width: 100%;
+  padding: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 6.5rem;
+}
+
+.manageShift-btn {
+  background: none;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.editShift-btn {
+  background-color: rgb(223, 185, 114);
+  margin-right: 1rem;
+}
+
+.deleteShift-btn {
+  background-color: rgb(242, 112, 112);
+}
+
+.addShiftBtn {
+  background-color: rgb(12, 156, 189);
+  transition: background-color 200ms ease-in-out;
+}
+
+.addShiftBtn:hover {
+  background-color: rgb(9, 112, 135);
+}
+
+.shiftInformation-container {
+  padding: 2rem;
+}
+
+.shiftInformation-header {
+  width: 100%;
+  padding: 1rem;
+}
+
+.shiftInformation-header span {
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  color: rgb(224, 224, 224);
+  font-size: 0.75rem;
+}
+
+.shiftInformation-header h5 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  width: 100%;
+  color: rgb(147, 147, 147);
+}
+
+.shiftInformation-main {
+  padding: 1rem;
+  padding-top: 2rem;
+  color: white;
+  background-color: rgb(36, 104, 36);
+  border-radius: 0.5rem;
+}
+
+.shiftInformation-team-container {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid white;
+}
+
+.shiftInformation-team-container span {
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.2rem;
+  letter-spacing: 2px;
+  color: rgb(229, 228, 228);
+  font-size: 0.75rem;
+}
+
+.shiftInformation-team-container h6 {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  width: 100%;
+  color: rgb(230, 230, 230);
+}
+
+.shiftInformation-dateRange-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1vw;
+}
+
+.shiftInformation-dateRange-container div {
+  margin-bottom: 1vw;
+}
+
+.shiftInformation-dateRange-startDate span,
+.shiftInformation-dateRange-endDate span {
+  font-size: 1rem;
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: rgb(188, 188, 188);
+}
+
+.shiftInformation-dateRange-startDate h6,
+.shiftInformation-dateRange-endDate h6 {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.noShift-container {
+  padding: 5vw 1rem;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+}
+
+.noShift-container h6 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  font-weight: 400;
+}
+
+@media all and (min-width: 990px) and (max-width: 1110px) {
+  .shiftInformation-team-container h6 {
+    font-size: 1.4rem;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .calendarLeft-container {
+    width: 100%;
+    padding-top: 2rem;
+  }
+
+  .calendarLeft-header-container {
+    width: 100%;
+    padding: 1vw;
+    border-bottom: 1px solid rgb(215, 215, 215);
+  }
+
+  .manageShift-container {
+    width: 100%;
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 3.5rem;
+  }
+
+  .manageShift-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+  }
+
+  .editShift-btn {
+    background-color: rgb(223, 185, 114);
+    margin-right: 1rem;
+  }
+
+  .deleteShift-btn {
+    background-color: rgb(242, 112, 112);
+  }
+
+  .shiftInformation-container {
+    padding: 2rem;
+  }
+
+  .shiftInformation-header {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .shiftInformation-dateRange-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.2rem;
+  }
+
+  .shiftInformation-container {
+    padding: 1.25rem;
+  }
+}

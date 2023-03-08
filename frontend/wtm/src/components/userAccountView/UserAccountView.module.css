@@ -1,0 +1,266 @@
+.userAccountView-pageContainer {
+  margin-top: 4vw;
+  min-width: 500px;
+  overflow-x: auto;
+}
+
+.buttonsPanel-container {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userPage-btn {
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  font-weight: 500;
+  color: white;
+}
+
+.buttonsPanel-container button:first-child {
+  margin-right: 1vw;
+}
+
+.remoteBtn {
+  background-color: green;
+}
+
+.statusBtn {
+  background-color: rgb(38, 34, 34);
+}
+
+.userAccount-details-container {
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1vw;
+  row-gap: 2vw;
+}
+
+.userData-container {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  border: 1px solid black;
+  width: max-content;
+  padding: 1rem;
+  background-color: rgb(32, 28, 28);
+  border-radius: 1rem;
+  width: 100%;
+  justify-self: center;
+  min-height: 20rem;
+}
+
+.headerAndButton-container h2 {
+  color: white;
+  text-transform: uppercase;
+}
+
+.headerAndButton-container button {
+  padding: 0rem 0.5rem;
+  background-color: inherit;
+  color: white;
+  border: 1px solid white;
+}
+
+.headerAndButton-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.userData-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.userData-field {
+  width: 45%;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  color: rgb(255, 255, 255);
+  font-size: 1.4rem;
+  height: max-content;
+  word-break: break-all;
+}
+
+.userData-field span {
+  display: block;
+  text-transform: uppercase;
+  color: rgb(212, 212, 212);
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.remoteDays-container {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  width: 85%;
+  justify-self: center;
+  border-radius: 1rem;
+  height: 100%;
+  padding: 1rem;
+  /* background-color: rgb(15, 77, 148); */
+  border: 1px solid black;
+  max-width: 550px;
+}
+
+.remoteDays-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.remoteDays-header h2 {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+}
+
+.workTime-container {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  border: 1px solid black;
+  padding: 1rem;
+  justify-self: start;
+  border-radius: 1rem;
+  width: 100%;
+  /* background-color: rgb(68, 60, 101); */
+}
+
+.workTime-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.workTime-header h2 {
+  color: rgb(21, 20, 20);
+  text-transform: uppercase;
+}
+
+.no-remoteDays-message {
+  padding: 4vw 2vw;
+  border: 1px solid black;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(2, 103, 99);
+}
+
+.no-remoteDays-message p {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: white;
+  font-size: 1.3rem;
+  word-break: break-all;
+}
+
+@media all and (min-width: 1300px) {
+  /* .remoteDays-container {
+    max-width: 100%;
+    width: 100%;
+  } */
+}
+
+@media all and (max-width: 1100px) {
+  .userAccount-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .userData-container {
+    max-width: 100%;
+  }
+
+  .workTime-container {
+    max-width: 100%;
+  }
+
+  .remoteDays-container {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .userAccount-details-container {
+    padding: 0.75rem;
+  }
+
+  .remoteDays-container {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .userData-container {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  .workTime-container {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+.addStatus-form-field {
+  margin-bottom: 1.2rem;
+}
+
+.marginTop {
+  margin-top: 1.7rem;
+}
+
+.form-error {
+  top: 90%;
+  font-size: 0.9rem;
+}
+
+.no-results-remoteDays-filter {
+  height: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 150%;
+}
+
+.no-results-remoteDays-filter p {
+  transform: translateY(-0.5vw);
+}
+
+.filterForm-wrapper {
+  margin-bottom: 2.2rem;
+  position: relative;
+}
+
+.filter-form_input {
+  width: 100%;
+  max-width: 7.5rem;
+  padding: 0.2rem;
+}
+
+.table-container {
+  height: 15rem;
+}
+
+.rowCell {
+  min-height: 51px;
+}

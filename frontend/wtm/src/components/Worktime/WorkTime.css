@@ -1,0 +1,93 @@
+.worktime-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 40px;
+  transition: all 0.5s ease;
+}
+
+.worktime-items-container {
+  width: 80vw;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+  border: 1px solid rgb(134, 134, 134);
+  border-radius: 2%;
+}
+
+.select-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.select-nav-item {
+  margin: 5px;
+  border-radius: 0.25em;
+  padding: 0.5em 0.5em;
+  cursor: pointer;
+  line-height: 1.1;
+  border: 1px solid;
+  width: 100%;
+}
+
+.select-nav-item-text {
+  width: 80%;
+}
+
+.message-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.h1-text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.select-options-worktime {
+  display: flex;
+  flex-direction: column;
+}
+
+.timepicker-worktime {
+  margin: 5px;
+  font-size: 10px;
+}
+
+.rc-time-picker-input {
+  font-size: 16px !important;
+  color: black !important;
+  border-color: black !important;
+}
+
+.work-time-messages {
+  display: flex;
+  flex-direction: row;
+}
+
+.message {
+  margin: 5px 15px;
+}
+
+.btn-add-ho {
+  margin: 3px 5px;
+}
+
+.date-list {
+  margin: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .select-nav-item {
+    width: 80%;
+  }
+}
