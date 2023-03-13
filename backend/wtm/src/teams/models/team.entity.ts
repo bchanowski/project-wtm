@@ -29,6 +29,6 @@ export class TeamEntity {
   })
   services: ServiceEntity[];
 
-  @OneToMany(() => UserDetailEntity, (userDetail) => userDetail.team_id)
+  @OneToMany(() => UserDetailEntity, (userDetail) => userDetail.team_id_fk)
   userDetails: UserDetailEntity[];
 }

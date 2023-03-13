@@ -1,9 +1,9 @@
 import { useLayOutEffect, useState, useContext } from "react";
 import { Button, Table } from "react-bootstrap";
-import MenageTeamForm from "./MenageTeamForm";
+import ManageTeamForm from "./ManageTeamForm";
 
-import classes from "./CSS/Menage.module.css";
-import MenageUserForm from "./ManageUserForm";
+import classes from "./CSS/Manage.module.css";
+import ManageUserForm from "./ManageUserForm";
 import Backdrop from "./Backdrop";
 import axios from "axios";
 import ListTeam from "./listTeam";
@@ -69,7 +69,7 @@ function ListOfUsers() {
   return (
     <div>
       <div id="search">
-        <MenageTeamForm name="Szukaj" />
+        <ManageTeamForm name="Szukaj" />
         <Button onClick={refreshList}>Odśwież</Button>
       </div>
       <div id="table">
@@ -126,7 +126,7 @@ function ListOfUsers() {
           </tbody>
         </Table>
         {modalIsOpen && (
-          <MenageUserForm
+          <ManageUserForm
             action={name}
             teamName={teamName}
             teamId={teamId}

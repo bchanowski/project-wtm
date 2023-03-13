@@ -141,8 +141,6 @@ const AddShiftForm = ({
           {!!requestError && requestStatus !== "loading" && (
             <ErrorAlert {...{ requestError }} />
           )}
-          {JSON.stringify(values, 2, null)}
-          {JSON.stringify(errors, 2, null)}
         </Form>
       )}
     </Formik>

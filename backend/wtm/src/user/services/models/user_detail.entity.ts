@@ -30,7 +30,7 @@ export class UserDetailEntity {
   phone_number: string;
 
   @ManyToOne(() => TeamEntity, { onDelete: 'SET NULL', nullable: true })
-  team_id: TeamEntity;
+  team_id_fk: TeamEntity;
 
   @CreateDateColumn({ type: 'timestamp' })
   public created_at!: Date;

@@ -48,7 +48,7 @@ export function PersonalDataView({
           </div>
           <div className={classes["userData-field"]}>
             <span>Zespół</span>
-            {userAccount?.team_id?.team_name || ""}
+            {userAccount?.team_id_fk?.team_name || ""}
           </div>
         </div>
       )}

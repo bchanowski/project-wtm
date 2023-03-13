@@ -174,7 +174,7 @@ export class UserService {
 
       const userDetails = await this.UserDetailRepository.find({
         where: { user_detail_id: userId },
-        relations: ['team_id'],
+        relations: ['team_id_fk'],
       });
       if (!accounts?.length || !userDetails?.length)
         throw { message: 'Użytkownik o podanym ID nie istnieje', code: 404 };

@@ -3,7 +3,7 @@ import ListOfUsers from "./ListOfTeams";
 import ManageTeamForm from "./ManageTeamForm";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-import classes from "./CSS/Menage.module.css";
+import classes from "./CSS/Manage.module.css";
 import { Container, Row } from "react-bootstrap";
 
 function ManageTeamPanel() {
@@ -31,13 +31,6 @@ function ManageTeamPanel() {
               variant="light"
             >
               Dodaj
-            </Button>
-            <Button
-              className={classes.buttonG}
-              onClick={handleClick}
-              variant="light"
-            >
-              Usuń
             </Button>
             <Button
               className={classes.buttonG}

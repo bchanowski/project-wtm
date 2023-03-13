@@ -139,22 +139,25 @@ export default function WorkTime() {
         " " +
         user_detail[0].surname +
         " - " +
-        (user_detail[0].team_id
-          ? user_detail[0].team_id.team_name
+        (user_detail[0].team_id_fk
+          ? user_detail[0].team_id_fk.team_name
           : "Brak Teamu")
     );
     doc.setFontSize(12);
-    doc.text(70, 45, "Dane dla dnia: " + todayDate);
+    doc.text(70, 45, "Dane dla dni od " + nextDate + " do " + todayDate);
+    doc.text(70, 55, "Czas przepracowany: " + fullWorkTime);
     workTimeMessages.map((message, index) =>
       doc.text(
         70,
-        55 + index * 10,
+        65 + index * 10,
         index +
           1 +
           ". " +
           message.message +
           " godzina: " +
-          message.message_sent_at.slice(11, 16)
+          message.message_sent_at.slice(11, 16) +
+          " dnia: " +
+          message.message_sent_at.slice(0, 10)
       )
     );
     doc.save(
@@ -223,8 +226,8 @@ export default function WorkTime() {
               <div className="dates-list">
                 <h1 className="h1-text">
                   {user_detail[0].name} {user_detail[0].surname} -{" "}
-                  {user_detail[0].team_id !== null
-                    ? user_detail[0].team_id.team_name
+                  {user_detail[0].team_id_fk !== null
+                    ? user_detail[0].team_id_fk.team_name
                     : "Brak teamu"}
                 </h1>
                 <Button

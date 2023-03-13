@@ -20,7 +20,7 @@ export class UserDetailService {
     try {
       return from(
         this.UserDetailRepository.find({
-          relations: ['user_id', 'team_id'],
+          relations: ['user_id', 'team_id_fk'],
           order: { user_detail_id: 'ASC' },
         }),
       );
@@ -43,7 +43,7 @@ export class UserDetailService {
             surname: Like(findSurname + '%'),
           },
           order: { user_detail_id: 'ASC' },
-          relations: ['user_id', 'team_id'],
+          relations: ['user_id', 'team_id_fk'],
         }),
       );
     } catch (err) {
@@ -60,16 +60,17 @@ export class UserDetailService {
   async updateTeamByNameAndSurname(message) {
     const user = await this.UserDetailRepository.find({
       where: { name: message.name, surname: message.surname },
-      relations: ['user_id', 'team_id'],
+      relations: ['user_id', 'team_id_fk'],
     });
 
     if (
       user.length == 1 &&
-      (user[0].team_id === null || user[0].team_id.team_id != message.team_id)
+      (user[0].team_id_fk === null ||
+        user[0].team_id_fk.team_id != message.team_id)
     ) {
       await this.UserDetailRepository.update(
         { name: message.name, surname: message.surname },
-        { team_id: message.team_id },
+        { team_id_fk: message.team_id },
       );
       throw new HttpException(
         {
@@ -87,7 +88,7 @@ export class UserDetailService {
         HttpStatus.CONFLICT,
       );
     } else if (
-      message.team_id === user[0].team_id.team_id &&
+      message.team_id === user[0].team_id_fk.team_id &&
       user[0].name === message.name &&
       user[0].surname === message.surname
     ) {
@@ -103,12 +104,12 @@ export class UserDetailService {
   async deleteTeamByNameAndSurname(message) {
     const user = await this.UserDetailRepository.find({
       where: { name: message.name, surname: message.surname },
-      relations: ['user_id', 'team_id'],
+      relations: ['user_id', 'team_id_fk'],
     });
-    if (user.length === 1 && user[0].team_id.team_id === message.team_id) {
+    if (user.length === 1 && user[0].team_id_fk.team_id === message.team_id) {
       await this.UserDetailRepository.update(
         { name: message.name, surname: message.surname },
-        { team_id: null },
+        { team_id_fk: null },
       );
       throw new HttpException(
         { status: HttpStatus.GONE, error_mess: 'Deleted' },
@@ -122,7 +123,7 @@ export class UserDetailService {
         },
         HttpStatus.NOT_FOUND,
       );
-    } else if (message.team_id !== user[0].team_id.team_id) {
+    } else if (message.team_id !== user[0].team_id_fk.team_id) {
       throw new HttpException(
         {
           status: HttpStatus.BAD_REQUEST,
@@ -142,9 +143,9 @@ export class UserDetailService {
         this.UserDetailRepository.find({
           where: {
             surname: Like(findSurname + '%'),
-            team_id: { team_name: teamname },
+            team_id_fk: { team_name: teamname },
           },
-          relations: ['user_id', 'team_id'],
+          relations: ['user_id', 'team_id_fk'],
         }),
       );
     } catch (err) {
@@ -163,9 +164,9 @@ export class UserDetailService {
       return from(
         this.UserDetailRepository.find({
           where: {
-            team_id: { team_name: teamname },
+            team_id_fk: { team_name: teamname },
           },
-          relations: ['user_id', 'team_id'],
+          relations: ['user_id', 'team_id_fk'],
         }),
       );
     } catch (err) {
@@ -184,9 +185,9 @@ export class UserDetailService {
       return from(
         this.UserDetailRepository.find({
           where: {
-            team_id: { team_id: teamid },
+            team_id_fk: { team_id: teamid },
           },
-          relations: ['user_id', 'team_id'],
+          relations: ['user_id', 'team_id_fk'],
         }),
       );
     } catch (err) {
@@ -207,7 +208,7 @@ export class UserDetailService {
           where: {
             user_detail_id: id,
           },
-          relations: ['user_id', 'team_id'],
+          relations: ['user_id', 'team_id_fk'],
         }),
       );
     } catch (err) {

@@ -29,7 +29,7 @@ export default function UserListPagination({ users_detail, fetchUsers }) {
           <span className="user-item">{user.name}</span>
           <span className="user-item">{user.surname}</span>
           <span className="user-item">
-            {user.team_id !== null ? user.team_id.team_name : "Brak"}
+            {user.team_id_fk !== null ? user.team_id_fk.team_name : "Brak"}
           </span>
           <span className="user-item">
             {user.created_at.slice(0, 10)} {user.created_at.slice(11, 16)}

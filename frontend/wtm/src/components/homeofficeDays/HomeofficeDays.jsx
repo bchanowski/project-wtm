@@ -94,8 +94,8 @@ export default function HomeofficeDays() {
         " " +
         user_detail[0].surname +
         " - " +
-        (user_detail[0].team_id
-          ? user_detail[0].team_id.team_name
+        (user_detail[0].team_id_fk
+          ? user_detail[0].team_id_fk.team_name
           : "Brak teamu")
     );
     doc.setFontSize(12);
@@ -199,8 +199,8 @@ export default function HomeofficeDays() {
               <>
                 <h1>
                   {user_detail[0].name} {user_detail[0].surname} -{" "}
-                  {user_detail[0].team_id !== null
-                    ? user_detail[0].team_id.team_name
+                  {user_detail[0].team_id_fk !== null
+                    ? user_detail[0].team_id_fk.team_name
                     : "Brak teamu"}
                 </h1>
                 <div className="dates-list">

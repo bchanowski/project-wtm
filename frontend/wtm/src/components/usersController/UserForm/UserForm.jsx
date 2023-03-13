@@ -47,7 +47,7 @@ export default function UserForm() {
     name: validateSingleTextField,
     surname: validateSingleTextField,
     phone_number: validatePhoneNumber,
-    team_id: validateSelectTeamField,
+    team_id_fk: validateSelectTeamField,
     email: validateEmail,
     password: validatePassword,
   };
@@ -55,7 +55,7 @@ export default function UserForm() {
     name: "",
     surname: "",
     phone_number: "",
-    team_id: "",
+    team_id_fk: "",
     email: "",
     password: "",
   };
@@ -64,7 +64,7 @@ export default function UserForm() {
       name: user.name,
       surname: user.surname,
       phone_number: user.phone_number,
-      team_id: user.team_id !== null ? user.team_id.team_id : "",
+      team_id_fk: user.team_id_fk !== null ? user.team_id_fk.team_id : "",
       email: user.user_id.email,
       password: "",
     };
@@ -78,7 +78,7 @@ export default function UserForm() {
       name: values.name,
       surname: values.surname,
       phone_number: values.phone_number,
-      team_id: values.team_id !== "" ? values.team_id : null,
+      team_id_fk: values.team_id_fk !== "" ? values.team_id_fk : null,
     };
     let userInfo = {
       email: values.email,
@@ -107,7 +107,8 @@ export default function UserForm() {
                   name: values.name,
                   surname: values.surname,
                   phone_number: values.phone_number,
-                  team_id: values.team_id !== "" ? values.team_id : null,
+                  team_id_fk:
+                    values.team_id_fk !== "" ? values.team_id_fk : null,
                   user_id: response.data.user_id,
                 };
                 axios
@@ -211,15 +212,15 @@ export default function UserForm() {
               />
             </Form.Group>
 
-            <Form.Group as={Col} controlId="team_id">
+            <Form.Group as={Col} controlId="team_id_fk">
               <Form.Label>Team</Form.Label>
               <Form.Select
-                value={values.team_id}
-                name="team_id"
+                value={values.team_id_fk}
+                name="team_id_fk"
                 onChange={handleChange}
-                isInvalid={errors.team_id && touched.team_id}
-                isValid={!errors.team_id && values.team_id}
-                error={errors.team_id}
+                isInvalid={errors.team_id_fk && touched.team_id_fk}
+                isValid={!errors.team_id_fk && values.team_id_fk}
+                error={errors.team_id_fk}
               >
                 <option value=""></option>
                 {teams && teams.length > 0

@@ -1,5 +1,5 @@
 import { Card, Form, Button } from "react-bootstrap";
-import classes from "./CSS/Menage.module.css";
+import classes from "./CSS/Manage.module.css";
 import { useLayoutEffect, useContext, useRef, useState } from "react";
 import axios from "axios";
 import { Typeahead } from "react-bootstrap-typeahead";

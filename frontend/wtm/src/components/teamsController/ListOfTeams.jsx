@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { Button, Table } from "react-bootstrap";
 import ManageTeamForm from "./ManageTeamForm";
 
-import classes from "./CSS/Menage.module.css";
+import classes from "./CSS/Manage.module.css";
 import ManageUserForm from "./ManageUserForm";
 import Backdrop from "./Backdrop";
 import axios from "axios";
@@ -17,8 +17,6 @@ import {
 } from "react-icons/ai";
 import EditTeamForm from "./EditTeamForm";
 import AppContext from "../../shared/context/app-context";
-
-import { CSVLink, CSVDownload } from "react-csv";
 
 function ListOfUsers({ setList, setNameButton }) {
   const dataTable = [];
@@ -173,17 +171,6 @@ function ListOfUsers({ setList, setNameButton }) {
                       variant="light"
                     >
                       <AiOutlineUserDelete size="2em" />
-                    </Button>
-                    <Button variant="light">
-                      {console.log(teamList)}
-                      <CSVLink
-                        className={classes.user}
-                        data={teamList}
-                        filename={`Tabela Uzytkowników ${value.team_name}`}
-                        headers={headers}
-                      >
-                        <AiOutlineCloudDownload size="2em" />
-                      </CSVLink>
                     </Button>
                   </td>
                   <td>

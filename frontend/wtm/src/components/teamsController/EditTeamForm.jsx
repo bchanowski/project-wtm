@@ -1,7 +1,7 @@
 import { useEffect, useContext, useRef, useState } from "react";
 import { Form, Card, Button, Col, Row } from "react-bootstrap";
 import { Input } from "react-bootstrap-typeahead";
-import classes from "./CSS/Menage.module.css";
+import classes from "./CSS/Manage.module.css";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -9,8 +9,6 @@ import TimePicker from "rc-time-picker";
 import moment from "moment";
 import "rc-time-picker/assets/index.css";
 import AppContext from "../../shared/context/app-context";
-
-//props.create.split("T")[0]
 
 function EditTeamForm(props) {
   const [id, setId] = useState("");
@@ -27,7 +25,6 @@ function EditTeamForm(props) {
 
   useEffect(() => {
     setId(props.id);
-    // const  newDate = new Date(props.)
   });
 
   async function updateTeam(e, id) {

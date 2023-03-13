@@ -7,5 +7,5 @@ export interface UserDetail {
   name?: string;
   surname?: string;
   phone_number?: string;
-  team_id?: Team;
+  team_id_fk?: Team;
 }
