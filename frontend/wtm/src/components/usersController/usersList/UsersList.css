@@ -42,6 +42,7 @@
   flex-wrap: wrap;
   width: 15%;
   margin: 0px 10px 0px;
+  overflow: hidden;
 }
 
 .user-item-id {
@@ -49,6 +50,7 @@
   overflow: scroll;
   flex-wrap: wrap;
   width: 2vw;
+  overflow: hidden;
 }
 
 .btn-list {

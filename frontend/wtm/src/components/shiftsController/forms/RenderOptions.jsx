@@ -13,7 +13,7 @@ const RenderOptions = (props) => {
   const getTeamNames = async () => {
     try {
       const responseData = await sendRequest(
-        "http://localhost:5000/api/teams/all",
+        import.meta.env.VITE_API_URL + "/api/teams/all",
         {
           headers: {
             Authorization: "Bearer " + token,

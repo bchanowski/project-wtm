@@ -23,7 +23,7 @@ const DeleteController = ({
     const { service_id: id } = selectedShift;
     try {
       const responseData = await sendRequest(
-        "http://localhost:5000/api/service",
+        import.meta.env.VITE_API_URL + "/api/service",
         {
           method: "DELETE",
           body: JSON.stringify({ id }),

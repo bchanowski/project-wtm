@@ -19,7 +19,7 @@ const LoginController = (props) => {
     let responseData = "";
     try {
       const isUser = await sendRequest(
-        "http://localhost:5000/api/users/mailExists",
+        import.meta.env.VITE_API_URL + "/api/users/mailExists",
         {
           method: "POST",
           body: JSON.stringify(formData),
@@ -28,7 +28,7 @@ const LoginController = (props) => {
       );
       if (isUser === true) {
         responseData = await sendRequest(
-          "http://localhost:5000/api/users/login",
+          import.meta.env.VITE_API_URL + "/api/users/login",
           {
             method: "POST",
             body: JSON.stringify(formData),
@@ -37,7 +37,7 @@ const LoginController = (props) => {
         );
       } else {
         responseData = await sendRequest(
-          "http://localhost:5000/api/admin/login",
+          import.meta.env.VITE_API_URL + "/api/admin/login",
           {
             method: "POST",
             body: JSON.stringify(formData),

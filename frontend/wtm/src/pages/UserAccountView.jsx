@@ -81,7 +81,7 @@ const UserAccountView = () => {
   const getUserAccount = async () => {
     try {
       const responseData = await sendRequest(
-        `http://localhost:5000/api/users/account/${user?.email}`,
+        import.meta.env.VITE_API_URL + `/api/users/account/${user?.email}`,
         {
           headers: {
             Authorization: "Bearer " + token,

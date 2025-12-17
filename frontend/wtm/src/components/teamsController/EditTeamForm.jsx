@@ -89,7 +89,11 @@ function EditTeamForm(props) {
       console.log(updateObj);
       const updateReq = async () => {
         await axios
-          .put("http://localhost:5000/api/teams/edit", updateObj, auth)
+          .put(
+            import.meta.env.VITE_API_URL + "/api/teams/edit",
+            updateObj,
+            auth
+          )
           .catch((error) => {
             console.log(error);
           });
@@ -105,7 +109,11 @@ function EditTeamForm(props) {
     console.log(name);
 
     axios
-      .put("http://localhost:5000/api/teams/delete", { team_name: name }, auth)
+      .put(
+        import.meta.env.VITE_API_URL + "/api/teams/delete",
+        { team_name: name },
+        auth
+      )
       .then((response) => {
         console.log(response);
       });

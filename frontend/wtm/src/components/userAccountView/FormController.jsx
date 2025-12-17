@@ -45,7 +45,7 @@ const FormController = ({
       }
 
       const responseData = await sendRequest(
-        `http://localhost:5000/api/${requestData?.endPoint}`,
+        import.meta.env.VITE_API_URL + `/api/${requestData?.endPoint}`,
         {
           method: requestData.method,
           body: JSON.stringify(data),

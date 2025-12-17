@@ -21,7 +21,7 @@ function ManageTeamForm(prop) {
 
   const getListOfTeam = async () => {
     await axios
-      .get("http://localhost:5000/api/teams/all", auth)
+      .get(import.meta.env.VITE_API_URL + "/api/teams/all", auth)
       .then((response) => {
         setTeams(response.data);
       })
@@ -40,7 +40,7 @@ function ManageTeamForm(prop) {
 
     const hasNumber = /\d/;
     const hasSpecialChar = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    const baseUrl = "http://localhost:5000/api/teams";
+    const baseUrl = import.meta.env.VITE_API_URL + "/api/teams";
     let teamObj = {};
     if (buttonName === "Dodaj") {
       teamObj = { team_name: teamName.toLocaleLowerCase() };

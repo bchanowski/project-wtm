@@ -20,7 +20,7 @@ export default function ModalEditAddHO({
     "Coś poszło nie tak! Spróbuj ponownie za moment!"
   );
   const [showDate, setShowDate] = useState(new Date());
-  const BASE_URL = "http://localhost:5000/api/";
+  const BASE_URL = import.meta.env.VITE_API_URL + "/api/";
   const { token } = useContext(AppContext);
   const auth = {
     headers: { Authorization: "Bearer " + token },

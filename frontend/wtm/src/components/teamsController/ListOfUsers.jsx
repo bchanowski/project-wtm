@@ -46,7 +46,7 @@ function ListOfUsers() {
 
   async function refreshList() {
     const dataFromDb = await axios.get(
-      "http://localhost:5000/api/teams/all",
+      import.meta.env.VITE_API_URL + "/api/teams/all",
       auth
     );
     setData(dataFromDb.data);
@@ -55,7 +55,7 @@ function ListOfUsers() {
     setListIsOpen(true);
     console.log(id);
     const listOfUser = await axios.get(
-      `http://localhost:5000/api/userdetail/team/${id}`,
+      import.meta.env.VITE_API_URL + `/api/userdetail/team/${id}`,
       auth
     );
 

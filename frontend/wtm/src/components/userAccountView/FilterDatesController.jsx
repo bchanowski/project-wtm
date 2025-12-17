@@ -22,7 +22,7 @@ const FilterDataController = ({
   const getDates = async () => {
     try {
       const responseData = await sendRequest(
-        `http://localhost:5000/api/${endPoint}`,
+        import.meta.env.VITE_API_URL + `/api/${endPoint}`,
         {
           method: "POST",
           body: JSON.stringify({

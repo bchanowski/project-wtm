@@ -6,7 +6,7 @@ import AppContext from "../../shared/context/app-context";
 
 export default function ModalDeleteHO({ show, onHide, deleteId }) {
   const [showToast, setShowToast] = useState(false);
-  const BASE_URL = "http://localhost:5000/api/";
+  const BASE_URL = import.meta.env.VITE_API_URL + "/api/";
   const { token } = useContext(AppContext);
   const auth = {
     headers: { Authorization: "Bearer " + token },

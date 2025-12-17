@@ -22,7 +22,7 @@ export default function UserForm() {
     headers: { Authorization: "Bearer " + token },
   };
   const navigate = useNavigate();
-  const BASE_URL = "http://localhost:5000/api/";
+  const BASE_URL = import.meta.env.VITE_API_URL + "/api/";
   const fetchTeams = () => {
     axios
       .get(BASE_URL + "teams/all", auth)

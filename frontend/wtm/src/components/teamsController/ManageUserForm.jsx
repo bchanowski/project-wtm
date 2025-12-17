@@ -22,7 +22,7 @@ function ManageUserForm(props) {
 
   const fetchUsers = async () => {
     await axios
-      .get("http://localhost:5000/api/userdetail", auth)
+      .get(import.meta.env.VITE_API_URL + "/api/userdetail", auth)
       .then((response) => {
         setUsers(response.data);
       });
@@ -30,7 +30,10 @@ function ManageUserForm(props) {
   const fetchSurnames = async (nameRef) => {
     console.log(nameRef);
     await axios
-      .get(`http://localhost:5000/api/userdetail/one/${nameRef}`, auth)
+      .get(
+        import.meta.env.VITE_API_URL + `/api/userdetail/one/${nameRef}`,
+        auth
+      )
       .then((response) => {
         setSurnameOpt(response.data);
       });
@@ -48,7 +51,7 @@ function ManageUserForm(props) {
       //console.log("adding");
       try {
         let response = await axios.put(
-          "http://localhost:5000/api/userdetail/update",
+          import.meta.env.VITE_API_URL + "/api/userdetail/update",
           {
             name: nameRef.current.inputNode.value,
             surname: surnameRef.current.inputNode.value,
@@ -65,7 +68,7 @@ function ManageUserForm(props) {
       console.log("delete");
       try {
         let response = await axios.put(
-          "http://localhost:5000/api/userdetail/delete",
+          import.meta.env.VITE_API_URL + "/api/userdetail/delete",
           {
             name: nameRef.current.inputNode.value,
             surname: surnameRef.current.inputNode.value,
