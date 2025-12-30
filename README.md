@@ -1,5 +1,5 @@
 # project-wtm
-You can check the site here - https://project-wtm.vercel.app/login (hosted via Vercel, Render and Supabase) - use testadmin@test.admin admin123 (backend takes a while to boot up so might have to try a few times)
+You can check the site here - https://project-wtm.vercel.app (hosted via Vercel, Render and Supabase) - use testadmin@test.admin admin123 (backend takes a while to boot up so might have to try a few times)
 [English version below](#english) </br>
 Projekt przedstawia pracę dyplomową, której zadaniem jest stworzenie aplikacji internetowej upraszczającej ewidencje czasu pracy i organizacji w firmie.
 
