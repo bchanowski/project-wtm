@@ -1,7 +1,7 @@
 # project-wtm
 You can check the site here - https://project-wtm.vercel.app (hosted via Vercel, Render and Supabase) - use testadmin@test.admin admin123 (backend takes a while to boot up so might have to try a few times)
 [English version below](#english) </br>
-Projekt przedstawia pracę dyplomową, której zadaniem jest stworzenie aplikacji internetowej upraszczającej ewidencje czasu pracy i organizacji w firmie.
+Projekt przedstawia aplikację, której zadaniem jest stworzenie aplikacji internetowej upraszczającej ewidencje czasu pracy i organizacji w firmie. (React, NestJS, PostrgreSQL)
 
 ### Baza danych  
 Serwer bazy danych aplikacji został postawiony na  PostgreSQL. Stworzona baza danych łączy się backend'em aplikacji i tam tworzone są encję oraz odpowiednie zapytania.  
@@ -86,7 +86,7 @@ W zakładce dni zdalne mamy listę dni zdalnych danego użytkownika.
 W zakładce czasy pracy znajdują się wiadomości o statusach pracy danego pracownika oraz obliczony przepracowany czas w danym okresie.  
 
 <h3 id="english">English</h3>
-The project presents a web application that simplifies the recording of working time and organization in a company.
+The project presents a web application that simplifies the recording of working time and organization in a company. (React, NestJS, PostrgreSQL)
 
 ### Database
 Serwer bazy danych aplikacji został postawiony na  PostgreSQL. Stworzona baza danych łączy się backend'em aplikacji i tam tworzone są encję oraz odpowiednie zapytania.  
